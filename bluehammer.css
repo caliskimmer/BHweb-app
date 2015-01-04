@@ -32,30 +32,46 @@
 	/*border: solid orange;*/
 }
 
-#elem-right-nav
+#cost-content
 {
 	position:relative;
+	background:#ffae2c;
+	height:60px;
 	width:100%;
-	height:55px;
 }
 
-#elem-right-nav ul
+#cost-content span
 {
-	position:relative;
-	height:55px;
-	width:100%;
-	padding:0;
-	margin:0;
+	position:absolute;
+	color:white;
+	font-family:'montserrat-light', sans-serif;
+	font-size:2em;
+	left:10px;
+	top:5px;	
 }
 
-#elem-right-nav li
+.content
 {
 	position:relative;
-	display:inline;
-	height:55px;
-	width:33.3%;
-	float:left;
-	
+	display:none;
+	height:60px;
+	color:white;
+	font-family:'montserrat-light', sans-serif;
+}
+
+#organization-content
+{
+	background:rgb(103,177,69);	
+}
+
+#communication-content
+{
+	background:rgb(220,35,90);
+}
+
+#extras-content
+{
+	background:rgb(203,37,128);
 }
 
 #elem-right-order-button
@@ -65,8 +81,8 @@
 	background:#999999;
 	height:30px;
 	width:100px;
-	top:12.5px;
 	float:right;
+	margin-top:15px;
 	margin-right:10px;
 	border:solid white 1.5px;
 	text-align:center;
@@ -75,10 +91,21 @@
 #elem-right-order-button span
 {
 	display:inline-block;
-	vertical-align:middle;
+	vertical-align:bottom;
+	margin-top:5px;
+	line-height:100%;
 	color:white;
-	font-family:sans-serif;
-	margin-top:7px;
+	font-family:'montserrat-light', sans-serif;
+}
+
+#elem-right-title
+{
+	position:relative;
+	display:inline-block;
+	margin: 20px 10px;
+	font-family:'montserrat-bold', sans-serif;
+	font-size: .9em;
+	color:white;
 }
 
 #elem-main-showcase
