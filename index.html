@@ -5,7 +5,6 @@
 		<title>Test App Blue Hammer</title>
 		<link rel="stylesheet" type="text/css" href="bluehammer.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="app.js"></script>
 		<script src="popup.js"></script>
 		<script src="device-select.js"></script>
 		<script src="FlexiColorPicker/colorpicker.min.js"></script>
@@ -33,7 +32,7 @@
 							<li id="iphone-menu" class="unselected"><img src="res/iPhone-Menu-Item.png"><br /><span>iPhone</span></li>
 							<li id="android-menu" class="unselected"><img src="res/Android-Menu-Item.png"><br /><span>Android</span></li>
 						</ul>
-						<section id="color-list">
+						<section id="color-list" class="hidden">
 							<div id="picker"></div>
 							<div id="slide"></div>
 							<span><strong>Directions:</strong> Click on the rainbow bar to pick a color you like. Next, choose the shade
@@ -46,48 +45,51 @@
 					<a id="device" class="dash-item" href="#"><span>Device<span></a>
 				</div>
 			</section>
-			<section id="elem-right-content">
-				<header id="elem-right-header">
-					<div id="elem-right-title">Your Order</div>
-					<div id="elem-right-order-button"><span>Order<span></div>
-				</header>
-				<div id="cost-content"><span>$0</span></div>
-				<div id="organization-content" class="content"><span></span></div>
-				<div id="communication-content" class="content"></div>
-				<div id="extras-content" class="content"></div>
-			</section>
-			<div id="elem-organization-box" class="elem-box">
-				<div class="box-header">Organization</div>
-				<div class="content-box">
-					<ul>
-						<li>School</li>
-						<li>Church</li>
-						<li>Small Business</li>
-					</ul>
-				</div>
-			</div>
 			
-			<div id="elem-communication-box" class="elem-box">
-				<div class="box-header">Communication</div>
-				<div class="content-box">
-					<ul>
-						<li>Push Notifications System with <span class="elem-box-emph">1 Passkey (+ $0)</span></li>
-						<li>Push Notifications System with <span class="elem-box-emph">10 Passkeys (+ $100)</span></li>
-						<li>Hyperlocal Network&#174; - Advanced Targeted Push Notifications System with <span class="elem-box-emph">unlimited
-Passkeys, push analytics, & unlimited photo storage (+ $5/month)</span></li>
-					</ul>
+			<section id="selection-content">
+				<div id="elem-organization-box" class="elem-box">
+					<div class="box-header">Organization</div>
+					<div class="content-box">
+						<ul>
+							<li>School</li>
+							<li>Church</li>
+							<li>Small Business</li>
+						</ul>
+					</div>
 				</div>
-			</div>
-			
-			<div id="elem-extras-box" class="elem-box">
-				<div class="box-header">Extras</div>
-				<div class="content-box">
-					<ul>
-						<li>Customizable App Background (+ $75)</li>
-						<li>Full Directory (Not just faculty or staff) (+ $500)</li>
-					</ul>
+				
+				<div id="elem-communication-box" class="elem-box">
+					<div class="box-header">Communication</div>
+					<div class="content-box">
+						<ul>
+							<li>Push Notifications System with <span class="elem-box-emph">1 Passkey (+ $0)</span></li>
+							<li>Push Notifications System with <span class="elem-box-emph">10 Passkeys (+ $100)</span></li>
+							<li>Hyperlocal Network&#174; - Advanced Targeted Push Notifications System with <span class="elem-box-emph">unlimited
+	Passkeys, push analytics, & unlimited photo storage (+ $5/month)</span></li>
+						</ul>
+					</div>
 				</div>
-			</div>
+				
+				<div id="elem-extras-box" class="elem-box">
+					<div class="box-header">Extras</div>
+					<div class="content-box">
+						<ul>
+							<li>Customizable App Background (+ $75)</li>
+							<li>Full Directory (Not just faculty or staff) (+ $500)</li>
+						</ul>
+					</div>
+				</div>
+				
+				<section id="elem-right-content">
+					<header id="elem-right-header">
+						<div id="elem-right-title">Your Order</div>
+						<div id="elem-right-order-button"><span>Order<span></div>
+					</header>
+					<div id="cost-content"><span>$0</span><span id="hyperlocal">+ $5/month</span></div>
+					<div id="organization-content" class="content"><span class="content-span"></span></div>
+					<div id="communication-content" class="content"><span class="content-span"></span></div>
+					<div id="extras-content" class="content"><span class="content-span"></span></div>
+				</section>
 		</section>
 	</body>
 </html>

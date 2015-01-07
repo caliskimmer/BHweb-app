@@ -4,13 +4,13 @@ $(document).ready( function()
 	var color = $("#color");
 	var device = $("#device");
 	var deviceList = $("#device-list");
+	var colorList = $("#color-list");
 	var openMenu = function(e)
 	{
-		var tar = $(e.target);
 		e.preventDefault();
-		var targetTab = (tar.attr("id") == undefined) ? tar.parent().attr("id") : tar.attr("id");
-		var dashItem = (e.target.id == "color") ? color:device;
-		console.log(targetTab);
+		var targetTab = (e.target.id === undefined || e.target.id === "") ? e.target.parentNode.id : e.target.id;
+		var dashItem = (targetTab === "color") ? color:device;
+		
 		/*
 		* Check where user clicked and determine what menu items to display
 		* and show which tabs are active.
@@ -18,23 +18,62 @@ $(document).ready( function()
 		
 		if( targetTab == "dpccolor" )
 		{
+			//if user clicks on colorList while deviceList still open, deactivate deviceList
+			if( deviceList[0].isSelected )
+			{
+				device.removeClass("dash-selected");
+				deviceList.addClass("hidden");
+				menu.addClass("hidden");
+				deviceList[0].isSelected = false;	
+			}
+			
 			dashItem = color;
+			colorList.removeClass("hidden");
+			colorList[0].isSelected = true;
 		}
 		
-		else if( targetTab == "dpcimg" )
+		else if( targetTab === "dpcimg" )
 		{
+			//same as above but with deviceList clicked and colorList still open
+			if( colorList[0].isSelected )
+			{
+				color.removeClass("dash-selected");
+				colorList.addClass("hidden");
+				menu.addClass("hidden");
+				colorList[0].isSelected = false;
+			}
+			
 			dashItem = device;
 			deviceList.removeClass("hidden");
+			deviceList[0].isSelected = true;
 		}
 		
-		else if( targetTab == "device" )
+		else if( targetTab === "device" )
 		{
+			if( colorList[0].isSelected )
+			{
+				color.removeClass("dash-selected");
+				colorList.addClass("hidden");
+				menu.addClass("hidden");
+				colorList[0].isSelected = false;
+			}
+			
 			deviceList.removeClass("hidden");
+			deviceList[0].isSelected = true;
 		}
 		
-		else if( targetTab == "color" )
+		else if( targetTab === "color" )
 		{
-			//temp
+			if( deviceList[0].isSelected )
+			{
+				device.removeClass("dash-selected")
+				deviceList.addClass("hidden");
+				menu.addClass("hidden");
+				deviceList[0].isSelected = false;
+			}
+			
+			colorList.removeClass("hidden");
+			colorList[0].isSelected = true;
 		}
 		
 		if( menu.hasClass("hidden") )
@@ -62,6 +101,7 @@ $(document).ready( function()
 		if( color.hasClass("dash-selected") )
 		{
 			color.removeClass("dash-selected");
+			colorList.addClass("hidden");
 		}
 		
 		else
