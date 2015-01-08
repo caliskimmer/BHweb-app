@@ -1,6 +1,7 @@
 $(document).ready(function()
 {
 	var selected = $("#ipad-menu");
+	var selectedDevice = $("selected-device");
 	
 	var deviceSelect = function(e)
 	{
@@ -17,6 +18,7 @@ $(document).ready(function()
 		{
 			case "ipad-menu":
 				selected.addClass("unselected");
+				selectedDevice.val("iPad");
 				selected = $("#ipad-menu");
 				selected.removeClass("unselected");
 				fg.find("img").attr("src", "res/ipad.png");
@@ -27,6 +29,7 @@ $(document).ready(function()
 			
 			case "iphone-menu":
 				selected.addClass("unselected");
+				selectedDevice.val("iPhone");
 				selected = $("#iphone-menu");
 				selected.removeClass("unselected");
 				fg.find("img").attr("src", "res/iphone.png");
@@ -38,6 +41,7 @@ $(document).ready(function()
 			case "android-menu":
 				selected.addClass("unselected");
 				selected = $("#android-menu");
+				selectedDevice.val("Android");
 				selected.removeClass("unselected");
 				fg.find("img").attr("src", "res/android.png");
 				screen.css("width", "186px");

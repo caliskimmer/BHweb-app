@@ -4,7 +4,7 @@
 	<head>
 		<title>Test App Blue Hammer</title>
 		<meta  charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="bluehammer.min.css">
+		<link rel="stylesheet" type="text/css" href="bluehammer.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="popup.js"></script>
 		<script src="device-select.js"></script>
@@ -22,6 +22,7 @@
 						<div id="screen"></div>
 						<form>
 							<input id="selected-color" type="hidden" value="rgb(255,255,255)">
+							<input id="selected-platform" type="hidden" value="iPad">
 						</form>
 					</div>
 					<a href="#" id="dash-pic-color"><img src="res/colors.png" alt="color" id="dpccolor"/></a>
@@ -91,6 +92,7 @@
 					<div id="organization-content" class="content"><span class="content-span"></span></div>
 					<div id="communication-content" class="content"><span class="content-span"></span></div>
 					<div id="extras-content" class="content"><span class="content-span"></span></div>
+					<div id="completed-content" class="content"><span class="content-span"></span><img src="#" id="preview-img" />
 				</section>
 			</section>
 		</section>

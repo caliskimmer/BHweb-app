@@ -12,6 +12,7 @@ $(document).ready(function()
 	var orgSelected = false;
 	var commSelected = false;
 	var extra = document.getElementById("extras-content");
+	var selectedDevice = document.getElementById("selected-platform").value;
 
 	orgBox.find("li").click(function(e)
 	{
@@ -19,6 +20,10 @@ $(document).ready(function()
 		e.target.style.border = "solid rgb(0,144,255)";
 		var org = document.getElementById("organization-content");
 		var orgSpan = org.getElementsByTagName("span")[0];
+		var completed = document.getElementById("completed-content");
+		var completedSpan = completed.getElementsByTagName("span")[0];
+		var completedImg = document.getElementById("preview-img");
+		
 		
 		if( orgBox[0].prevElem )
 		{
@@ -35,10 +40,28 @@ $(document).ready(function()
 			case "School":
 				e.target.moneyValue = 1500;
 				org.style.display = "block";
+				completed.style.display="block";
+				completedSpan.innerHTML = "Your app (hover over!):";
 				orgSpan.innerHTML = "Organization: School";
 				moneyValue -= orgBox[0].prevMoney;
 				moneyValue += 1500;
 				money.innerHTML = "$" + moneyValue;
+				
+				switch(selectedDevice)
+				{
+					case "iPad":
+						completedImg.src = "res/school-ipad-thumbnail.jpg";
+						break;
+					
+					case "iPhone":
+						completedImg.src = "res/school-iPhone-thumbnail.jpg";
+						break;
+					
+					case "Android":
+						completedImg.src = "res/school-Android-thumbnail.jpg";
+						break;
+				}
+				
 				break;
 			
 			case "Church":
@@ -48,6 +71,21 @@ $(document).ready(function()
 				moneyValue -= orgBox[0].prevMoney;
 				moneyValue += 1500;
 				money.innerHTML = "$" + moneyValue;
+				
+				switch(selectedDevice)
+				{
+					case "iPad":
+						completedImg.src = "res/church-ipad-thumbnail.jpg";
+						break;
+					
+					case "iPhone":
+						completedImg.src = "res/church-iPhone-thumbnail.jpg";
+						break;
+						
+					case "Android":
+						completedImg.src = "res/church-Android-thumbnail.jpg";
+						break;
+				}
 				break;
 				
 			case "Small Business":
@@ -57,6 +95,10 @@ $(document).ready(function()
 				moneyValue -= orgBox[0].prevMoney;
 				moneyValue += 4500;
 				money.innerHTML = "$" + moneyValue;
+				
+				switch(selectedDevice)
+				{
+				}
 		}
 
 		orgBox[0].prevElem = e.target;
