@@ -132,6 +132,7 @@
 	margin-right:10px;
 	border:solid white 1.5px;
 	text-align:center;
+	cursor:pointer;
 }
 	
 #elem-right-order-button span
@@ -154,7 +155,7 @@
 	position:relative;
 	display:inline-block;
 	margin: 20px 10px;
-	font-family:'montserrat-bold', sans-serif;
+	font-family:'montserrat-light', sans-serif;
 	font-size: .9em;
 	color:white;
 }

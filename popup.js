@@ -23,12 +23,12 @@ $(document).ready( function()
 			{
 				device.removeClass("dash-selected");
 				deviceList.addClass("hidden");
-				menu.addClass("hidden");
+				menu.hide();
 				deviceList[0].isSelected = false;	
 			}
 			
 			dashItem = color;
-			colorList.removeClass("hidden");
+			colorList.show();
 			colorList[0].isSelected = true;
 		}
 		
@@ -39,12 +39,12 @@ $(document).ready( function()
 			{
 				color.removeClass("dash-selected");
 				colorList.addClass("hidden");
-				menu.addClass("hidden");
+				menu.hide();
 				colorList[0].isSelected = false;
 			}
 			
 			dashItem = device;
-			deviceList.removeClass("hidden");
+			deviceList.show();
 			deviceList[0].isSelected = true;
 		}
 		
@@ -54,7 +54,7 @@ $(document).ready( function()
 			{
 				color.removeClass("dash-selected");
 				colorList.addClass("hidden");
-				menu.addClass("hidden");
+				menu.hide();
 				colorList[0].isSelected = false;
 			}
 			
@@ -68,7 +68,7 @@ $(document).ready( function()
 			{
 				device.removeClass("dash-selected")
 				deviceList.addClass("hidden");
-				menu.addClass("hidden");
+				menu.hide();
 				deviceList[0].isSelected = false;
 			}
 			
@@ -78,13 +78,13 @@ $(document).ready( function()
 		
 		if( menu.hasClass("hidden") )
 		{
-			menu.removeClass("hidden");
+			menu.show();
 			dashItem.addClass("dash-selected");
 		}
 		
 		else
 		{
-			menu.addClass("hidden");
+			menu.hide();
 			dashItem.removeClass("dash-selected");
 		}
 	}
@@ -97,7 +97,7 @@ $(document).ready( function()
 	$("#menu-close").click( function(e)
 	{
 		e.preventDefault();
-		menu.addClass("hidden");
+		menu.fadeOut(100);
 		if( color.hasClass("dash-selected") )
 		{
 			color.removeClass("dash-selected");
