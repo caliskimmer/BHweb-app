@@ -65,21 +65,22 @@
 	width:100%;
 }
 
-#cost-content span
+#cost-content div
 {
 	position:relative;
 	color:white;
 	font-family:'montserrat-light', sans-serif;
 }
 
-#cost-content span:nth-of-type(1)
+#cost-content div:first-child
 {
+	display:inline-block;
 	font-size:1.7em;
 	left:10px;
 	top:15px;	
 }
 
-#cost-content span:nth-of-type(2)
+#hyperlocal
 {
 	display:none;
 	font-size:1.7em;
@@ -163,7 +164,6 @@
 	position:relative;
 	width:1000px;
 	height:500px;
-	background: url("res/showcase-bg.png") no-repeat;
 }
 
 #dash-pic-color
@@ -186,7 +186,7 @@
 {
 	position:relative;
 	height:500px;
-	width:800px;
+	width:1000px;
 	margin: auto;
 	background:url('res/showcase-fg.png') no-repeat;
 	text-align:center;
@@ -283,12 +283,11 @@
 
 #color-list span
 {
-	position:relative;
-	display:inline-block;
+	position:absolute;
 	width:500px;
 	color:white;
-	margin-left:20px;
-	margin-bottom:30px;
+	margin-left:25px;
+	bottom:50px;
 	font-family:'montserrat-light';
 	font-size:.9em;
 }
@@ -303,7 +302,6 @@
 	float:right;
 	margin-top:5px;
 	margin-right:5px;
-	padding-bottom:-5px;
 	line-height:0;
 }
 
@@ -429,7 +427,7 @@ a:active
 .inactive
 {
 	background:#ffb347;
-	//border-top:solid #666666 1px;
+	border-top:solid #666666 1px;
 }
 
 .active

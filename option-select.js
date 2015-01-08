@@ -126,7 +126,7 @@ $(document).ready(function()
 				commSpan.innerHTML = "Hyperlocal Network&#174";
 				moneyValue -= commBox[0].prevMoney;
 				money.innerHTML = "$" + moneyValue;
-				document.getElementById("hyperlocal").style.display = "inline";
+				document.getElementById("hyperlocal").style.display = "inline-block";
 			}
 			
 			commBox[0].prevElem = e.target;

@@ -23,7 +23,6 @@ $(document).ready(function()
 				screen.css("width", "246px");
 				screen.css("height", "328px");
 				screen.css("margin-top", "-369px");
-				
 				break;
 			
 			case "iphone-menu":
