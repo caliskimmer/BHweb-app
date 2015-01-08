@@ -97,7 +97,7 @@ $(document).ready( function()
 	$("#menu-close").click( function(e)
 	{
 		e.preventDefault();
-		menu.fadeOut(100);
+		menu.fadeOut(200);
 		if( color.hasClass("dash-selected") )
 		{
 			color.removeClass("dash-selected");
