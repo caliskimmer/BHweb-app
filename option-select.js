@@ -12,7 +12,10 @@ $(document).ready(function()
 	var orgSelected = false;
 	var commSelected = false;
 	var extra = document.getElementById("extras-content");
-	var selectedDevice = document.getElementById("selected-platform").value;
+
+	//variables below refer to mouseover popup
+	var screen = document.getElementById("mouseover-preview");
+	var screenImg = document.getElementById("screen-content").getElementsByTagName("img")[0];
 
 	orgBox.find("li").click(function(e)
 	{
@@ -23,7 +26,11 @@ $(document).ready(function()
 		var completed = document.getElementById("completed-content");
 		var completedSpan = completed.getElementsByTagName("span")[0];
 		var completedImg = document.getElementById("preview-img");
+		var selectedOrg = document.getElementById("selected-org");
 		
+		//any organization selection should make the preview block pop up
+		completed.style.display="block";
+		completedSpan.innerHTML = "Your App (hover over!):";
 		
 		if( orgBox[0].prevElem )
 		{
@@ -40,25 +47,28 @@ $(document).ready(function()
 			case "School":
 				e.target.moneyValue = 1500;
 				org.style.display = "block";
-				completed.style.display="block";
-				completedSpan.innerHTML = "Your app (hover over!):";
 				orgSpan.innerHTML = "Organization: School";
 				moneyValue -= orgBox[0].prevMoney;
 				moneyValue += 1500;
 				money.innerHTML = "$" + moneyValue;
+				selectedOrg.value = "School";
 				
-				switch(selectedDevice)
+				switch(document.getElementById("selected-platform").value)
 				{
 					case "iPad":
 						completedImg.src = "res/school-ipad-thumbnail.jpg";
+						screenImg.src = "res/school-ipad.jpg";
 						break;
 					
 					case "iPhone":
 						completedImg.src = "res/school-iPhone-thumbnail.jpg";
+						screenImg.src = "res/school-iPhone.jpg";
+
 						break;
 					
 					case "Android":
 						completedImg.src = "res/school-Android-thumbnail.jpg";
+						screenImg.src = "res/school-Android.jpg";
 						break;
 				}
 				
@@ -71,19 +81,24 @@ $(document).ready(function()
 				moneyValue -= orgBox[0].prevMoney;
 				moneyValue += 1500;
 				money.innerHTML = "$" + moneyValue;
+				selectedOrg.value = "Church";
 				
-				switch(selectedDevice)
+				switch(document.getElementById("selected-platform").value)
 				{
 					case "iPad":
 						completedImg.src = "res/church-ipad-thumbnail.jpg";
+						screenImg.src = "res/church-ipad.jpg";
+						
 						break;
 					
 					case "iPhone":
 						completedImg.src = "res/church-iPhone-thumbnail.jpg";
+						screenImg.src = "res/church-iPhone.jpg";
 						break;
 						
 					case "Android":
 						completedImg.src = "res/church-Android-thumbnail.jpg";
+						screenImg.src = "res/church-Android.jpg";
 						break;
 				}
 				break;
@@ -95,10 +110,36 @@ $(document).ready(function()
 				moneyValue -= orgBox[0].prevMoney;
 				moneyValue += 4500;
 				money.innerHTML = "$" + moneyValue;
+				selectedOrg.value = "Small Business";
 				
-				switch(selectedDevice)
+				switch(document.getElementById("selected-platform").value)
 				{
+					case "iPad":
+						completedImg.src = "res/small-business-ipad-thumbnail.jpg";
+						screenImg.src = "res/small-business-ipad.jpg";
+						break;
+					
+					case "iPhone":
+						completedImg.src = "res/small-business-iPhone-thumbnail.jpg";
+						screenImg.src = "res/small-business-iPhone.jpg";
+						break;
+						
+					case "Android":
+						completedImg.src = "res/small-business-Android-thumbnail.jpg";
+						screenImg.src = "res/small-business-Android.jpg";
+						break;
 				}
+		}
+		
+		if( document.getElementById("selected-platform").value == "iPhone" ||
+			document.getElementById("selected-platform").value == "Android" )
+		{
+			screenImg.style.width = "225px";		
+		}
+		
+		else
+		{
+			screenImg.style.width = "304px";
 		}
 
 		orgBox[0].prevElem = e.target;
@@ -216,8 +257,7 @@ $(document).ready(function()
 					{
 						extraSpan.innerHTML = extraSpan.innerHTML.substring(
 											extraSpan.innerHTML.indexOf(">") +
-											 1,extraSpan.innerHTML.length);
-											
+											 1,extraSpan.innerHTML.length);				
 					}
 					
 					else

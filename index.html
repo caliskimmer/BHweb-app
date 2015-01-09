@@ -4,13 +4,14 @@
 	<head>
 		<title>Test App Blue Hammer</title>
 		<meta  charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="bluehammer.css">
+		<link rel="stylesheet" type="text/css" href="bluehammer.min.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="popup.js"></script>
 		<script src="device-select.js"></script>
 		<script src="FlexiColorPicker/colorpicker.min.js"></script>
 		<script src="color-select.js"></script>
 		<script src="option-select.js"></script>
+		<script src="mouseover-preview.js"></script>
 	</head>
 	
 	<body>
@@ -23,6 +24,7 @@
 						<form>
 							<input id="selected-color" type="hidden" value="rgb(255,255,255)">
 							<input id="selected-platform" type="hidden" value="iPad">
+							<input id="selected-org" type="hidden" value="Not Set">
 						</form>
 					</div>
 					<a href="#" id="dash-pic-color"><img src="res/colors.png" alt="color" id="dpccolor"/></a>
@@ -92,8 +94,19 @@
 					<div id="organization-content" class="content"><span class="content-span"></span></div>
 					<div id="communication-content" class="content"><span class="content-span"></span></div>
 					<div id="extras-content" class="content"><span class="content-span"></span></div>
-					<div id="completed-content" class="content"><span class="content-span"></span><img src="#" id="preview-img" />
+					<div id="completed-content" class="content"><span class="content-span"></span><img src="#" id="preview-img" alt="Preview Thumbnail Image"/>
 				</section>
+			</section>
+			
+			<section id="mouseover-screen">
+				<div id="screen-content">
+					<h1>Preview</h1>
+					<img src="#" alt="Preview Image"/>
+					<!--<img src="res/tooltip-arrow.png" alt="Tooltip Arrow" id="tooltip-arrow"/>-->
+					<div>
+						<strong>Note:</strong><br /><br /> This is just a generic preview. Your app will be 							custom-tailored to the colors and options you have chosen.
+					</div>
+				</div>
 			</section>
 		</section>
 	</body>
