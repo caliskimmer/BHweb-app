@@ -20,6 +20,7 @@
 {
 	width:1000px;
 	overflow:hidden;
+	margin:auto;
 }
 
 #selection-content
@@ -130,17 +131,15 @@
 
 #mouseover-screen
 {
-	position:absolute;
+	position:fixed;
 	display:none;
 	background:rgba(0,0,0, 0.75);
 	height: 500px;
 	width: 500px;
-	left:0;
-	right:0;
-	top:200px;
-	margin-left:auto;
-	margin-right:auto;
-	
+	top:50%;
+	left:50%;
+	margin-left:-250px;
+	margin-top:-250px;
 }
 
 #screen-content img
