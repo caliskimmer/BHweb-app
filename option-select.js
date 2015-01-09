@@ -134,12 +134,12 @@ $(document).ready(function()
 		if( document.getElementById("selected-platform").value == "iPhone" ||
 			document.getElementById("selected-platform").value == "Android" )
 		{
-			screenImg.style.width = "225px";		
+			screenImg.style.width = "141px";		
 		}
 		
 		else
 		{
-			screenImg.style.width = "304px";
+			screenImg.style.width = "190px";
 		}
 
 		orgBox[0].prevElem = e.target;

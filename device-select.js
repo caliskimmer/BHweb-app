@@ -118,12 +118,12 @@ $(document).ready(function()
 		if(selectedDevice.val() === "iPad")
 		{
 			console.log("rannn");
-			previewImg.style.width = "304px";
+			previewImg.style.width = "190px";
 		}
 		
 		else
 		{
-			previewImg.style.width = "225px";
+			previewImg.style.width = "141px";
 		}
 	}
 	
